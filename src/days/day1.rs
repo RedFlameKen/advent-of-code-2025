@@ -77,57 +77,6 @@ pub fn day1() {
     print!("zeros: {}\n", zeros);
 }
 
-pub fn day1p2() {
-    let input_string = read_file("inputs/day1");
-    let inputs = input_string.split("\n");
-
-    let mut value: i32 = 50;
-    let mut zeros = 0;
-    for input in inputs {
-        // The last one int the split string is empty, ignore it
-        if input.is_empty() {
-            continue;
-        }
-
-        let direction = get_direction(input);
-        let rotations = get_rotations(input);
-
-        if rotations >= 100 {
-            let full_rotations = rotations / 100;
-            zeros += full_rotations;
-        }
-
-        let remaining = match direction {
-            Direction::LEFT => (rotations % 100) * -1,
-            Direction::RIGHT => rotations % 100,
-            Direction::NONE => panic!("invalid rotation"),
-        };
-
-        if remaining < 0 {
-            if value + remaining < 0 {
-                zeros += 1;
-                value = (value + 100 + remaining) % 100;
-            } else {
-                value += remaining;
-            }
-        } else if remaining > 0 {
-            if value + remaining >= 100 {
-                zeros += 1;
-                value = (value + remaining) % 100;
-            } else {
-                value += remaining;
-                if value == 0 {
-                    zeros += 1;
-                }
-            }
-        }
-
-        print!("current: {}\n", value);
-    }
-
-    print!("zeros: {}\n", zeros);
-}
-
 fn tick_left(value: i32) -> i32 {
     if value == 0 {
         return 99;
@@ -142,7 +91,7 @@ fn tick_right(value: i32) -> i32 {
     return value + 1;
 }
 
-pub fn tick_system(){
+pub fn day1p2(){
     let input_string = read_file("inputs/day1");
     let inputs = input_string.split("\n");
 
