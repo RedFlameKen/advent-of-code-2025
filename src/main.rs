@@ -1,6 +1,6 @@
 use std::env;
 
-use crate::days::{day1::{day1, day1p2}, day2::{day2, day2p2}, day3::day3};
+use crate::days::{day1::{day1, day1p2}, day2::{day2, day2p2}, day3::{day3, day3p2}};
 
 mod days;
 mod util;
@@ -12,7 +12,8 @@ fn dispatch(day_str: &str){
         "day2" => day2(),
         "day2p2" => day2p2(),
         "day3" => day3(),
-        _ => panic!("not binded")
+        "day3p2" => day3p2(),
+        _ => day3p2()
     }
 }
 
@@ -21,6 +22,6 @@ fn main() {
 
     match args.get(1) {
         Some(value) => dispatch(value),
-        None => panic!("not binded")
+        None => dispatch(""),
     }
 }
