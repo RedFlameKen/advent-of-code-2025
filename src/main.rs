@@ -1,6 +1,6 @@
 use std::env;
 
-use crate::days::{day1::{day1, day1p2}, day2::{day2, day2p2}, day3::{day3, day3p2}, day4::day4};
+use crate::days::{day1::{day1, day1p2}, day2::{day2, day2p2}, day3::{day3, day3p2}, day4::{day4, day4p2}};
 
 mod days;
 mod util;
@@ -14,7 +14,8 @@ fn dispatch(day_str: &str){
         "day3" => day3(),
         "day3p2" => day3p2(),
         "day4" => day4(),
-        _ => day4()
+        "day4p2" => day4p2(),
+        _ => day4p2()
     }
 }
 
