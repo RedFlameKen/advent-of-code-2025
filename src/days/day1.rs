@@ -66,7 +66,7 @@ pub fn day1() {
             Direction::RIGHT => get_right_rotation(value, rotations % 100),
             Direction::NONE => panic!("invalid rotation"),
         };
-        assert!(value < 100 && value >= 0, "value is {value}");
+        assert!(value < 100 && value >= 0, "value is {}", value);
         print!("current: {}\n", value);
 
         if value == 0 {

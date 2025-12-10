@@ -10,7 +10,7 @@ fn get_id_range(range: &str) -> Vec<String> {
     let min = match min_str {
         Some(value) => match value.parse::<i64>() {
             Ok(result) => result,
-            Err(why) => panic!("failed to parse max {value} because: {why}"),
+            Err(_why) => panic!("failed to parse max {} because: {}", value, _why),
         },
         None => panic!("could not find item"),
     };
@@ -19,7 +19,7 @@ fn get_id_range(range: &str) -> Vec<String> {
     let max = match max_str {
         Some(value) => match value.parse::<i64>() {
             Ok(result) => result,
-            Err(why) => panic!("failed to parse max {value} because: {why}"),
+            Err(_why) => panic!("failed to parse max {} because: {}", value, _why),
         },
         None => panic!("could not find item"),
     };
@@ -58,7 +58,7 @@ pub fn day2() {
         for id in invalid_ids {
             let parsed = match id.parse::<i64>() {
                 Ok(value) => value,
-                Err(why) => panic!("could not parse {id} because: {why}"),
+                Err(_why) => panic!("could not parse {} because: {}", id, _why),
             };
 
             value += parsed;
@@ -134,7 +134,7 @@ pub fn day2p2() {
         for id in invalid_ids {
             let parsed = match id.parse::<i64>() {
                 Ok(value) => value,
-                Err(why) => panic!("could not parse {id} because: {why}"),
+                Err(_why) => panic!("could not parse {} because: {}", id, _why),
             };
 
             value += parsed;

@@ -62,7 +62,7 @@ pub fn day3() {
 
         let voltage = match cat.parse::<i32>() {
             Ok(value) => value,
-            Err(why) => panic!("could not parse {} to i32 because {}", cat, why),
+            Err(_why) => panic!("could not parse {} to i32 because {}", cat, _why),
         };
 
         print!("voltage of bank {} is [{}]\n", bank, voltage);
@@ -136,7 +136,7 @@ pub fn day3p2() {
 
         let joltage = match joltage_str.parse::<i64>() {
             Ok(value) => value,
-            Err(why) => panic!("could not parse {} to i64 because {}", joltage_str, why),
+            Err(_why) => panic!("could not parse {} to i64 because {}", joltage_str, _why),
         };
 
         print!("joltage of bank {} is [{}]\n", bank, joltage);
