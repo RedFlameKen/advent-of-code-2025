@@ -5,7 +5,7 @@ use crate::days::{
     day2::{day2, day2p2},
     day3::{day3, day3p2},
     day4::{day4, day4p2},
-    day5::day5,
+    day5::{day5, day5p2},
 };
 
 mod days;
@@ -22,7 +22,8 @@ fn dispatch(day_str: &str) {
         "day4" => day4(),
         "day4p2" => day4p2(),
         "day5" => day5(),
-        _ => day5(),
+        "day5p2" => day5p2(),
+        _ => day5p2(),
     }
 }
 
